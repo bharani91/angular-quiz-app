@@ -1,0 +1,62 @@
+<div id="practice" class="page {{transitionState}}" ng-controller="PracticeController">
+
+    <div class="question">
+        <h2>{{ question.question }}</h2>
+    </div>
+    
+    <form>
+        <ul class="list inset options-list">
+            <li ng-repeat="answer in question.options" 
+                ng-class="{ 
+                    correct: correct_answer(question, $index),
+                    incorrect: incorrect_answer(question, $index)
+                }">     
+                    
+                <label ng-class="{ strike: question.strike_array.indexOf($index) >= 0 }">                       
+                    <input type="radio" value="{{$index}}" name="question[]" ng-model="question.selected" ng-disabled="has_attempted(question)"/>
+                    {{ answer }}
+                </label>
+            </li>
+        </ul>
+        
+
+
+        <div ng-show="has_attempted(question)">
+            <button ng-click="skip()" class="button-main button-block">Next Question</button>    
+        </div>
+
+        <div ng-hide="has_attempted(question)" class="clear">
+            <button ng-click="check_answer(question)" ng-disabled="!question.selected" class="button-main button-block">
+                Check Answer
+            </button>
+
+            <div class="push-right">
+                <button ng-click="hide_two_options(question)" ng-disabled="question.hide_help_button" class="button button-50">50-50</button>
+                <button ng-click="skip()" class="button button-skip">Skip &rarr;</button>    
+            </div>
+        </div>
+
+        
+        
+    </form>
+    
+    <div class="answer" ng-show="show_answer">
+        <div ng-show="answered_correctly" class="alert success">
+            <h3>
+                &#9786; Correct Answer!
+            </h3>
+        </div>
+        <div ng-hide="answered_correctly" class='alert warning'>
+            <h3>
+                Sorry wrong answer! :( <br>
+                <small>
+                    You answered  <em>'{{ question.options[question.selected] }}'</em>  but the correct answer is <em>'{{ question.options[question.answer] }}'</em>.        
+                </small>
+            </h3>
+
+        </div>
+    </div>
+
+
+
+</div>

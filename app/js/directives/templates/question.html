@@ -1,0 +1,11 @@
+<div>
+    <h2>{{ question.question }}</h2>
+
+    <ul>
+        <li ng-repeat="answer in question.options">                            
+            <input type="radio" value="{{$index}}" />
+            {{answer}}
+        </li>
+    </ul>
+    <input type="submit" value="Send" ng-click="check_answer(question)" ng-disabled="no_answer"  />
+</div>

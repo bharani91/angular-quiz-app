@@ -1,0 +1,187 @@
+body, .content {
+    background: #eee url(../img/gradient_squares.png) left top repeat;
+}
+
+body {
+    font-size: 16px;
+    @media screen and (max-width: 767px) {
+        font-size: 12px;
+    }
+}
+
+.question {
+    font-size: 1.2em;
+}
+
+.clear {
+    overflow: hidden;
+}
+
+
+.options-list.list.inset {
+    margin: 20px 0;
+    li {
+        padding: 0;
+        label {
+            display: block;
+            padding: 10px;
+            font-size: 1.5em;
+        }
+
+        &.incorrect {
+            background-color: #D13C38;
+            background-color: #D13C38;
+            color: #fff;
+        }
+
+        &.correct {
+            background-color: rgb(83, 180, 79);
+            color: #fff;
+
+        }
+
+        .strike {
+            visibility: hidden;
+        }
+    }
+}
+
+.alert {
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+    &.warning {
+        background-color: rgb(250, 191, 103);
+        color: rgb(151, 96, 13);
+        em {
+            color: #000;
+        }
+    }
+
+    &.success {
+        background-color: rgb(83, 180, 79);
+        color: #fff;
+    }
+
+    &.danger {
+        background-color: #D13C38;
+        color: #fff;
+    }
+}
+
+
+.page_container {
+    overflow: hidden;
+}
+
+.page {
+    position: relative;
+    opacity: 0.1;
+    width: 90%;
+    min-width: 300px;
+    max-width: 600px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow:
+    0 1px 1px rgba(0,0,0,0.15), /* The top layer shadow */
+    0 10px 0 -5px #fffffd, /* The second layer */
+    0 10px 1px -4px rgba(0,0,0,0.15), /* The second layer shadow */
+    0 20px 0 -10px #fffffd, /* The third layer */
+    0 20px 1px -9px rgba(0,0,0,0.15), /* The third layer shadow */
+    0 0px 10px rgba(black, .10);
+
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+
+    margin: 30px auto;
+
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+.page:not(.active) {
+    top: 30px;
+}
+
+.page.active {
+    top: 0;
+    opacity: 1;
+}
+
+.push-right {
+    float: right;
+}
+
+.test-mode-list {
+
+    &.books {
+        margin-top: 50px;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .subheader {
+        font-weight: 400;
+        color: gray;
+    }
+}
+
+
+.test-list {
+    list-style: none;
+
+    & > li {
+        margin-bottom: 50px;
+    }
+}
+
+.timer-wrapper {
+    margin-bottom: 30px;
+
+    .button-main {
+        height: 44px;
+    }
+}
+.row {
+    overflow: hidden;
+    .span10 {
+        width: 82%;
+        float: left;
+    }
+    .span2 {
+        width: 15%;
+        margin-left: 3%;
+        float: right;
+
+        .button {
+            width: 100%;
+
+            &.button-50 {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+
+        .span10 {
+            width: 75%;
+            float: left;
+        }
+        .span2 {
+            width: 22%;
+            margin-left: 3%;
+        }
+        
+    }
+}
