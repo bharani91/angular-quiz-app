@@ -2,20 +2,20 @@
 
     <div class="row statistics" ng-show="viewing_results">
         <div class="alert secondary">
-            <h1>Your score: {{ correct_answers(test) }}/{{ size }}</h1>
+            <h1><i class="icon-list-numbered"></i> Your score: {{ correct_answers(test) }}/{{ size }}</h1>
             <br>
-            <button ng-click="reload()" class="button button-main button-block">Take another test</button>
+            <button ng-click="reload()" class="button button-main button-block">Take another test <i class="icon-right-open"></i></button>
         </div>
     </div>
     
 
     <div class="row timer-wrapper" ng-hide="viewing_results">
         <div class="span10">
-            <h3 ng-hide="timer_stopped" class="alert warning"><timer interval="1000" countdown="countdown">{{minutes}} mins : {{seconds}} secs remaining</timer></h3>
+            <h3 ng-hide="timer_stopped" class="alert warning"><timer interval="1000" countdown="countdown"><i class="icon-clock"></i> {{minutes}} mins : {{seconds}} secs remaining</timer></h3>
             <h3 ng-show="timer_stopped" class="alert danger">Time's Up!</h3>            
         </div>
         <div class="span2">
-            <button ng-click="reload()" class="button button-main">Retake</button>
+            <button ng-click="reload()" class="button button-main"><i class="icon-arrows-cw"></i> Retake</button>
         </div>
     </div>
 
@@ -23,11 +23,11 @@
         <li ng-repeat="question in test">
             <div class="row">
                 <h2 class="span10">
-                    {{ question.question }}
+                    <span class="count">{{ $index+1 }}.</span> {{ question.question }}
                 </h2>
 
                 <div class="span2">
-                    <button ng-click="hide_two_options(question)" ng-disabled="question.hide_help_button||viewing_results" class="button button-50">50-50</button>
+                    <button ng-click="hide_two_options(question)" ng-disabled="question.hide_help_button||viewing_results" class="button button-50"><i class="icon-scissors"></i> 50-50</button>
                 </div>
             </div>
             <form>
@@ -48,12 +48,12 @@
                 <div class="answer" ng-show="viewing_results">
                     <div ng-show="question.answered_correctly" class="alert success">
                         <h3>
-                            &#9786; Correct Answer!
+                            <i class="icon-smile"></i> Correct Answer!
                         </h3>
                     </div>
                     <div ng-hide="question.answered_correctly" class='alert warning'>
                         <h3>
-                            Sorry wrong answer! :( <br>
+                            <i class="icon-frown"></i> Sorry wrong answer!<br>
                             <small>
                                 You answered  <em>'{{ question.options[question.selected] }}'</em>  but the correct answer is <em>'{{ question.options[question.answer] }}'</em>.        
                             </small>
@@ -68,11 +68,11 @@
 
 
         <div ng-hide="viewing_results">
-            <button ng-click="show_results(test)" ng-disabled="remaining_questions(test)" class="button-main button-block">Show Results</button>
+            <button ng-click="show_results(test)" ng-disabled="remaining_questions(test)" class="button-main button-block">Submit and check your score <i class="icon-right-open"></i></button>
         </div>
 
         <div ng-show="viewing_results">
-            <button ng-click="reload()" class="button button-main button-block">Take another test</button>
+            <button ng-click="reload()" class="button button-main button-block">Take another test <i class="icon-right-open"></i></button>
         </div>
 
 

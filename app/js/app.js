@@ -19,6 +19,9 @@ angular.module('Quiz', [
     $routeProvider.when('/', {templateUrl: 'partials/index.html', controller: 'IndexController'});
     $routeProvider.when('/practice/:id', {templateUrl: 'partials/practice.html', controller: 'PracticeController'});
     $routeProvider.when('/test', {templateUrl: 'partials/test.html', controller: 'TestController'});
+
+    $routeProvider.when('/info', {templateUrl: 'partials/info.html' });
+    $routeProvider.when('/recommended-books', {templateUrl: 'partials/recommended_books.html', controller: 'BooksController'});
 }]);
 
 

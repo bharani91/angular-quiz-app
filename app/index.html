@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>GK Quiz</title>
     <link rel="stylesheet" href="css/ratchet.css">
+    <link rel="stylesheet" href="css/fontello.css">
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
@@ -14,16 +15,19 @@
             <div class="gradient">
                 <div class="inner">
                     <a class="button-negative" ng-click="back()" ng-hide="is_root()">
-                        &larr; Back
+                        <i class="icon-left-open"></i>
                     </a>
                     <a class="button-negative" href="#/" ng-hide="is_root()">
-                        H
+                        <i class="icon-home"></i>
                     </a>
                     <h1 class="title">
                         <a href="#/">GK Quiz</a>
                     </h1>
-                    <a class="button-negative recommended-books pull-right" href="#/recommended-books" ng-hide="is_root()">
-                        &hearts; Recommended Books
+                    <a class="button-negative recommended-books pull-right first" href="#/recommended-books" ng-hide="is_root()">
+                        <i class="icon-book"></i>
+                    </a>
+                    <a class="button-negative pull-right last" href="#/info" ng-hide="is_root()">
+                        <i class="icon-info"></i>
                     </a>
                 </div>
             </div>
@@ -53,6 +57,7 @@
     <script src="js/controllers/index_controller.js"></script>
     <script src="js/controllers/test_controller.js"></script>
     <script src="js/controllers/practice_controller.js"></script>
+    <script src="js/controllers/books_controller.js"></script>
     
     <script src="js/directives/timer.js"></script>
 </body>

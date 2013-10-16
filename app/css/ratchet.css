@@ -144,7 +144,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 
 .bar-title .inner {
-    width: 90% !important;
+    width: 92% !important;
     max-width: 600px !important;
     min-width: 300px !important;
     margin: 0 auto;
@@ -204,17 +204,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 /* Hacky way to right align buttons outside of flex-box system
 Note: is only absolutely positioned button, would be better if flex-box had an "align right" option */
-.bar-title .title [class*="button"]:last-child, .bar-title .button [class*="button"]:last-child, .bar-title [class*="button"].pull-right {
+.bar-title .title [class*="button"]:last-child, .bar-title .button [class*="button"]:last-child, .bar-title [class*="button"].pull-right.first {
     position: absolute;
     top: 0;
-    right: 5px
+    right: 55px;
 }
 
-@media screen and (max-width: 767px) {
+.bar-title .title [class*="button"]:last-child, .bar-title .button [class*="button"]:last-child, .bar-title [class*="button"].pull-right.last {
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+/*@media screen and (max-width: 767px) {
     .bar-title .title [class*="button"]:last-child, .bar-title .button [class*="button"]:last-child, .bar-title [class*="button"].pull-right {
         display: none
     }
-}
+}*/
 /* Override standard button active states */
 .bar-title .button:active {
     color: #fff;
@@ -254,6 +260,7 @@ Note: is only absolutely positioned button, would be better if flex-box had an "
     margin-top: 10px;
     list-style: none;
     background-color: snow;
+
 }
 
 /* Pad each list item and add dividers */
@@ -261,7 +268,15 @@ Note: is only absolutely positioned button, would be better if flex-box had an "
     position: relative;
     padding: 11px 60px 11px 10px;
     /* Given extra right padding to accomodate counts, chevrons or buttons */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 47%, rgba(244,244,244,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(244,244,244,1)), color-stop(100%,rgba(244,244,244,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(244,244,244,1) 47%,rgba(244,244,244,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(244,244,244,1) 47%,rgba(244,244,244,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(244,244,244,1) 47%,rgba(244,244,244,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(244,244,244,1) 47%,rgba(244,244,244,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
 }
 
 /* Give top border to first list items */

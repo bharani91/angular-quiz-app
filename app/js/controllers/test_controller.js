@@ -5,8 +5,8 @@
 angular.module('Quiz.controllers')
 .controller('TestController', ["$scope", "Quiz", "$window", function($scope, Quiz, $window) {
 
-    $scope.size = 2; // number of questions
-    $scope.countdown = 1*1; // 5 mins
+    $scope.size = 25; // number of questions
+    $scope.countdown = 15*60; // 15 mins
 
     var init = function() {
         $scope.$broadcast('timer-start');
