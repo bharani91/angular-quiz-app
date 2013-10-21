@@ -9,6 +9,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('Quiz', [
     'ngRoute',
+    'ngTouch',
     'Quiz.filters',
     'Quiz.services',
     'Quiz.directives',

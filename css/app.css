@@ -25,6 +25,23 @@ body {
       display: block;
       padding: 10px;
       font-size: 1.5em; }
+      .options-list.list.inset li label.active {
+        background: #adadad;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #adadad 0%, #cccccc 5%, #eeeeee 100%);
+        /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #adadad), color-stop(5%, #cccccc), color-stop(100%, #eeeeee));
+        /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #adadad 0%, #cccccc 5%, #eeeeee 100%);
+        /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #adadad 0%, #cccccc 5%, #eeeeee 100%);
+        /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #adadad 0%, #cccccc 5%, #eeeeee 100%);
+        /* IE10+ */
+        background: linear-gradient(to bottom, #adadad 0%, #cccccc 5%, #eeeeee 100%);
+        /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#adadad', endColorstr='#eeeeee',GradientType=0 );
+        /* IE6-9 */ }
     .options-list.list.inset li.incorrect {
       background: #D13C38;
       background: #ff3019;
@@ -47,6 +64,8 @@ body {
       border: 1px solid rgba(0, 0, 0, 0.2);
       color: #fff;
       position: relative; }
+      .options-list.list.inset li.incorrect label {
+        background: transparent; }
       .options-list.list.inset li.incorrect:after {
         font-family: "fontello";
         font-style: normal;
@@ -84,6 +103,8 @@ body {
       border: 1px solid rgba(0, 0, 0, 0.2);
       color: #fff;
       position: relative; }
+      .options-list.list.inset li.correct label {
+        background: transparent; }
       .options-list.list.inset li.correct:after {
         font-family: "fontello";
         font-style: normal;
@@ -178,7 +199,7 @@ body {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
 
 .page:not(.active) {
-  top: 30px; }
+  top: 5px; }
 
 .page.active {
   top: 0;

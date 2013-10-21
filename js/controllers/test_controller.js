@@ -35,6 +35,10 @@ angular.module('Quiz.controllers')
         return count;
     }
 
+    $scope.select = function(answer) {
+        $scope.selected = answer;
+    }
+
 
     $scope.correct_answer = function(question, option_index) {
         return ($scope.viewing_results) && (question.answer == option_index);

@@ -12,7 +12,10 @@
             incorrect: incorrect_answer(question, $index)
         }">     
 
-        <label ng-class="{ strike: question.strike_array.indexOf($index) >= 0 }">                       
+        <label ng-click="select(answer)" ng-class="{ 
+            strike: question.strike_array.indexOf($index) >= 0,
+            active: selected == answer
+            }">                       
             <input type="radio" value="{{$index}}" name="question[]" ng-model="question.selected" ng-disabled="has_attempted(question)"/>
             {{ answer }}
         </label>

@@ -29,6 +29,10 @@ angular.module('Quiz.controllers')
         $location.path("/practice/" + $scope.next_question_id);
     }
 
+    $scope.select = function(answer) {
+        $scope.selected = answer;
+    }
+
 
     // Single Question - Verify answer
     $scope.check_answer = function(question) {
