@@ -50,4 +50,5 @@
     <access origin="http://127.0.0.1*" />
     <access origin="*" />
     <content src="index.html" />
+    <gap:plugin name="com.adobe.plugins.gaplugin" />
 </widget>

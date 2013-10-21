@@ -38,6 +38,26 @@
 
     </section>
 
+    <div id="my-ad-slot" class="inmobi-ad">
+        <script type="text/javascript">
+            var inmobi_conf = {
+                siteid : "be67efcdac5147ab909112a2b80c3918",
+                slot : "15",
+                manual: false,
+                test: true,
+                sticky: "bottom",
+                targetWindow : "_blank",
+                onError : function(code) {
+                    if(code == "nfr") {
+                        document.getElementById("my-ad-slot").style.display = "none";
+                    }
+                }
+            };
+        </script>
+
+        <script type="text/javascript" src="http://cf.cdn.inmobi.com/ad/inmobi.js"></script> 
+
+    </div>
     
 
     
@@ -60,5 +80,18 @@
     <script src="js/controllers/practice_controller.js"></script>
     
     <script src="js/directives/timer.js"></script>
+
+    <script>
+        jQuery(document).ready(function($) {
+            $(window).on("load resize", function() {
+                $("#my-ad-slot div").css({
+                    "left": (($(window).innerWidth() / 2) - 160)
+                });
+            });
+        });
+    </script>
+
+
+
 </body>
 </html>
