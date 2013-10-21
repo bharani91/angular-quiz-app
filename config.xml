@@ -7,6 +7,7 @@
     <author email="bharani@abhayam.co.in" href="http://abhayam.co.in">
         Bharani Muthukumaraswamy
     </author>
+    <preference name="phonegap-version" value="3.0.0" />
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
@@ -50,5 +51,4 @@
     <access origin="http://127.0.0.1*" />
     <access origin="*" />
     <content src="index.html" />
-    <gap:plugin name="com.adobe.plugins.gaplugin" />
 </widget>
